@@ -1,0 +1,46 @@
+﻿<ArcGIS defaultAssembly="CalcGeomContextMenuAddin.dll" defaultNamespace="CalcGeomContextMenuAddin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f17f5d5d-25ff-487d-9d20-bea86f2cc537}" version="1.0" desktopVersion="2.3.15769">
+    <Name>CalcGeomContextMenuAddin</Name>
+    <Description>CalcGeomContextMenuAddin description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Matt Washburn</Author>
+    <Company>TxDOT</Company>
+    <Date>5/6/2019 8:10:33 AM, 2019</Date>
+    <Subject>Framework, Geometry</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="CalcGeomContextMenuAddin_Module" className="Module1" autoLoad="false" caption="Module1">
+      <controls>
+        <!-- add your controls here -->
+        <button id="CalcGeomContextMenuAddin_CalcTxdotGeom" caption="Calculate TxDOT Geometry" className="CalcTxdotGeom" loadOnClick="true" largeImage="Images\texCalc.png" smallImage="Images\texCalc.png">
+          <tooltip heading="Calculate Geometry (TxDOT Defaults)">Shortcut to Calculate Geometry for TxDOT Roadways Edits<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <!--<updateModule refID="esri_mapping">
+      <menus>
+        --><!--This is the DAML ID of Pro context menu --><!--
+        <updateMenu refID="esri_mapping_selection2DContextMenu">
+          <insertButton refID="CalcGeomContextMenuAddin_CalcTxdotGeom"/>
+        </updateMenu>
+      </menus>
+    </updateModule>-->
+    <updateModule refID="esri_editing_EditingModule">
+      <menus>
+        <!--This is the DAML ID of Pro context menu -->
+        <updateMenu refID="esri_editing_tableColumnContextMenu">
+          <insertButton refID="CalcGeomContextMenuAddin_CalcTxdotGeom" separator="true" insert="before" placeWith="esri_editing_tableCalculateGeometryButton"/>
+        </updateMenu>
+      </menus>
+    </updateModule>
+    <!--update the UI ribbon with new button-->
+    <!--<updateModule refID="esri_mapping">
+      <tabs>
+        <updateTab refID="esri_mapping_tableTab">
+        </updateTab>
+      </tabs>
+    </updateModule>-->
+  </modules>
+</ArcGIS>
