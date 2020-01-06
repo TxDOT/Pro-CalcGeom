@@ -34,6 +34,16 @@ namespace CalcGeomContextMenuAddin
             }
         }
 
+        public static void CreateNotification(string message, string title, string uriString)
+        {
+            FrameworkApplication.AddNotification(new Notification()
+            {
+                Message = message,
+                Title = title,
+                ImageUrl = new Uri(uriString, UriKind.Absolute).AbsoluteUri
+            });
+        }
+
         #region Overrides
         /// <summary>
         /// Called by Framework when ArcGIS Pro is closing

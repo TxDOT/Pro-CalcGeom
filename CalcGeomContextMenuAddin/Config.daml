@@ -1,5 +1,5 @@
 ﻿<ArcGIS defaultAssembly="CalcGeomContextMenuAddin.dll" defaultNamespace="CalcGeomContextMenuAddin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{f17f5d5d-25ff-487d-9d20-bea86f2cc537}" version="1.0" desktopVersion="2.3.15769">
+  <AddInInfo id="{f17f5d5d-25ff-487d-9d20-bea86f2cc537}" version="2.3" desktopVersion="2.3.15769">
     <Name>CalcGeomContextMenuAddin</Name>
     <Description>CalcGeomContextMenuAddin description</Description>
     <Image>Images\AddinDesktop32.png</Image>
@@ -15,13 +15,17 @@
       <controls>
         <!-- add your controls here -->
         <button id="CalcGeomContextMenuAddin_CalcTxdotGeom" caption="Calculate TxDOT Geometry" className="CalcTxdotGeom" loadOnClick="true" largeImage="Images\texCalc.png" smallImage="Images\texCalc.png">
-          <tooltip heading="Calculate Geometry (TxDOT Defaults)">Shortcut to Calculate Geometry for TxDOT Roadways Edits<disabledText /></tooltip>
+          <tooltip heading="Calculate Geometry (TxDOT Defaults)">
+            Shortcut to Calculate Geometry for TxDOT Roadways Edits<disabledText />
+          </tooltip>
         </button>
       </controls>
     </insertModule>
     <!--<updateModule refID="esri_mapping">
       <menus>
-        --><!--This is the DAML ID of Pro context menu --><!--
+        -->
+    <!--This is the DAML ID of Pro context menu -->
+    <!--
         <updateMenu refID="esri_mapping_selection2DContextMenu">
           <insertButton refID="CalcGeomContextMenuAddin_CalcTxdotGeom"/>
         </updateMenu>
